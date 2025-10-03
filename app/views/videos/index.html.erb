@@ -1,0 +1,15 @@
+<h1><%= t('videos.index.title') %></h1>
+
+<% if @videos.any? %>
+  <ul>
+    <% @videos.each do |video| %>
+      <li>
+        <h2><%= link_to video.title(I18n.locale), video_path(video) %></h2>
+        <p><%= truncate(video.description(I18n.locale), length: 180) %></p>
+        <small><%= t('labels.tags') %>: <%= video.tag_list(I18n.locale).presence || t('labels.no_tags') %></small>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t('videos.index.empty') %></p>
+<% end %>

@@ -1,0 +1,144 @@
+pt:
+  navigation:
+    home: "Início"
+    news: "Notícias"
+    videos: "Vídeos"
+    profile: "Meu perfil"
+    admin: "Administração"
+    admin_news: "Notícias (admin)"
+    admin_videos: "Vídeos (admin)"
+    admin_tags: "Tags (admin)"
+    admin_comments: "Comentários (admin)"
+    admin_users: "Usuários (admin)"
+    logout: "Sair"
+    login: "Entrar"
+    signup: "Criar conta"
+  flash:
+    must_login: "Faça login para continuar."
+    admin_only: "Você não tem permissão para acessar esta área."
+    banned: "Sua conta está banida. Fale com um administrador."
+    news_created: "Notícia criada com sucesso."
+    news_updated: "Notícia atualizada com sucesso."
+    news_deleted: "Notícia removida."
+    video_created: "Vídeo criado com sucesso."
+    video_updated: "Vídeo atualizado com sucesso."
+    video_deleted: "Vídeo removido."
+    tag_created: "Tag criada com sucesso."
+    tag_updated: "Tag atualizada com sucesso."
+    tag_deleted: "Tag removida."
+    comment_approved: "Comentário aprovado."
+    comment_rejected: "Comentário rejeitado."
+    comment_not_changed: "Comentário não alterado."
+    user_banned: "Usuário banido."
+    user_unbanned: "Usuário desbanido."
+    account_created: "Conta criada com sucesso."
+    signed_in: "Login realizado com sucesso."
+    invalid_credentials: "E-mail ou senha inválidos."
+    signed_out: "Você saiu da conta."
+    comment_submitted: "Comentário enviado para moderação."
+    rating_saved: "Nota registrada."
+    friend_added: "Amigo adicionado."
+    friend_removed: "Amigo removido."
+    friend_not_found: "Não foi possível encontrar essa amizade."
+  actions:
+    search: "Buscar"
+    save: "Salvar"
+    send: "Enviar"
+    login: "Entrar"
+    new_news: "Nova notícia"
+    edit_news: "Editar notícia"
+    new_video: "Novo vídeo"
+    edit_video: "Editar vídeo"
+    new_tag: "Nova tag"
+    edit_tag: "Editar tag"
+    show: "Ver"
+    edit: "Editar"
+    delete: "Excluir"
+    are_you_sure: "Tem certeza?"
+    back: "Voltar"
+    approve: "Aprovar"
+    reject: "Rejeitar"
+    ban: "Banir"
+    unban: "Desbanir"
+  labels:
+    published_at: "Publicada em %{date}"
+    tags: "Tags"
+    no_tags: "Sem tags"
+    average_rating: "Nota média"
+    rate_this: "Avalie este conteúdo"
+    your_rating: "Sua nota (1 a 5)"
+    login_to_rate: "Entre para avaliar."
+    comments: "Comentários"
+    no_comments: "Ainda não há comentários aprovados."
+    new_comment: "Novo comentário"
+    comment_body: "Mensagem"
+    login_to_comment: "Entre para comentar."
+    video_url: "Link do vídeo"
+    created_at: "Criado em"
+    user: "Usuário"
+    content: "Conteúdo"
+    locale: "Idioma"
+    source: "Origem"
+    news: "Notícia"
+    video: "Vídeo"
+    name: "Nome"
+    status: "Status"
+  news:
+    index:
+      title: "Últimas notícias"
+      search: "Buscar por título ou texto"
+      empty: "Nenhuma notícia cadastrada."
+  videos:
+    index:
+      title: "Vídeos recentes"
+      empty: "Nenhum vídeo cadastrado."
+  users:
+    new:
+      title: "Criar conta"
+    fields:
+      name: "Nome"
+      email: "E-mail"
+      password: "Senha"
+      password_confirmation: "Confirmar senha"
+      locale: "Idioma preferido"
+    show:
+      add_friend: "Adicionar como amigo"
+      remove_friend: "Remover amigo"
+      friends: "Amigos"
+      no_friends: "Nenhum amigo por aqui ainda."
+  sessions:
+    new:
+      title: "Entrar"
+  admin:
+    news:
+      index:
+        title: "Gerenciar notícias"
+        headline: "Título"
+      fields:
+        title_pt: "Título em português"
+        title_es: "Título em espanhol"
+        body_pt: "Texto em português"
+        body_es: "Texto em espanhol"
+    videos:
+      index:
+        title: "Gerenciar vídeos"
+        headline: "Título"
+      fields:
+        title_pt: "Título em português"
+        title_es: "Título em espanhol"
+        description_pt: "Descrição em português"
+        description_es: "Descrição em espanhol"
+        url: "URL do vídeo"
+    tags:
+      index:
+        title: "Gerenciar tags"
+        new_tag: "Cadastrar nova tag"
+    comments:
+      index:
+        title: "Moderar comentários"
+        empty: "Nenhum comentário aguardando aprovação."
+    users:
+      index:
+        title: "Gerenciar usuários"
+        banned: "Banido"
+        active: "Ativo"

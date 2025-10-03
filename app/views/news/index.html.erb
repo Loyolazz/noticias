@@ -1,0 +1,24 @@
+<h1><%= t('news.index.title') %></h1>
+
+<%= form_with url: news_index_path, method: :get, local: true do |form| %>
+  <div>
+    <%= form.label :q, t('news.index.search') %>
+    <%= form.text_field :q, value: params[:q] %>
+    <%= form.submit t('actions.search') %>
+  </div>
+<% end %>
+
+<% if @news.any? %>
+  <ul>
+    <% @news.each do |item| %>
+      <li>
+        <h2><%= link_to item.title(I18n.locale), news_path(item) %></h2>
+        <p><%= truncate(item.body(I18n.locale), length: 180) %></p>
+        <small><%= t('labels.published_at', date: l(item.created_at.to_date)) %></small><br>
+        <small><%= t('labels.tags') %>: <%= item.tag_list(I18n.locale).presence || t('labels.no_tags') %></small>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= t('news.index.empty') %></p>
+<% end %>

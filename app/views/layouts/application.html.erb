@@ -23,6 +23,38 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar">
+      <nav>
+        <%= link_to t('navigation.home'), root_path, class: "nav-link" %>
+        <%= link_to t('navigation.news'), news_index_path, class: "nav-link" %>
+        <%= link_to t('navigation.videos'), videos_path, class: "nav-link" %>
+        <% if logged_in? %>
+          <%= link_to t('navigation.profile'), current_user, class: "nav-link" %>
+          <% if current_user.admin? %>
+            <%= link_to t('navigation.admin_news'), admin_news_index_path, class: "nav-link" %>
+            <%= link_to t('navigation.admin_videos'), admin_videos_path, class: "nav-link" %>
+            <%= link_to t('navigation.admin_tags'), admin_tags_path, class: "nav-link" %>
+            <%= link_to t('navigation.admin_comments'), admin_comments_path, class: "nav-link" %>
+            <%= link_to t('navigation.admin_users'), admin_users_path, class: "nav-link" %>
+          <% end %>
+          <%= button_to t('navigation.logout'), session_path, method: :delete, class: "nav-link", form: { class: 'inline-form' } %>
+        <% else %>
+          <%= link_to t('navigation.login'), new_session_path, class: "nav-link" %>
+          <%= link_to t('navigation.signup'), new_user_path, class: "nav-link" %>
+        <% end %>
+      </nav>
+      <div class="locale-switcher">
+        <%= link_to 'PT', url_for(locale: :pt), class: "nav-link" %>
+        <%= link_to 'ES', url_for(locale: :es), class: "nav-link" %>
+      </div>
+    </header>
+
+    <main class="container">
+      <% flash.each do |type, message| %>
+        <p class="flash <%= type %>"><%= message %></p>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>

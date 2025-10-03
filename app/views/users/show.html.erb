@@ -1,0 +1,33 @@
+<h1><%= @user.name %></h1>
+<p><strong><%= t('users.fields.email') %>:</strong> <%= @user.email %></p>
+<p><strong><%= t('users.fields.locale') %>:</strong> <%= @user.locale.upcase %></p>
+
+<% if logged_in? && current_user != @user %>
+  <% friendship = current_user.friendships.find_by(friend: @user) || current_user.inverse_friendships.find_by(user: @user) %>
+  <% if friendship %>
+    <%= button_to t('users.show.remove_friend'), friendship_path(friendship), method: :delete %>
+  <% else %>
+    <%= button_to t('users.show.add_friend'), friendships_path(friend_id: @user.id), method: :post %>
+  <% end %>
+<% end %>
+
+<section>
+  <h2><%= t('users.show.friends') %></h2>
+  <% if @friends.any? %>
+    <ul>
+      <% @friends.each do |friend| %>
+        <li>
+          <%= link_to friend.name, friend %>
+          <% if logged_in? && current_user == @user %>
+            <% existing = current_user.friendships.find_by(friend: friend) || current_user.inverse_friendships.find_by(user: friend) %>
+            <% if existing %>
+              <%= button_to t('users.show.remove_friend'), friendship_path(existing), method: :delete %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= t('users.show.no_friends') %></p>
+  <% end %>
+</section>

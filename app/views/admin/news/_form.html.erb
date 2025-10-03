@@ -1,0 +1,18 @@
+<%= form_with model: [:admin, @news], local: true do |form| %>
+  <%= form.label :title_pt, t('admin.news.fields.title_pt') %>
+  <%= form.text_field :title_pt %>
+
+  <%= form.label :title_es, t('admin.news.fields.title_es') %>
+  <%= form.text_field :title_es %>
+
+  <%= form.label :body_pt, t('admin.news.fields.body_pt') %>
+  <%= form.text_area :body_pt %>
+
+  <%= form.label :body_es, t('admin.news.fields.body_es') %>
+  <%= form.text_area :body_es %>
+
+  <%= form.label :tag_ids, t('labels.tags') %>
+  <%= form.select :tag_ids, options_for_select(@tags.map { |tag| ["#{tag.name} (#{tag.locale.upcase})", tag.id] }, @news.tag_ids), {}, multiple: true %>
+
+  <%= form.submit t('actions.save') %>
+<% end %>

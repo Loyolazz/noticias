@@ -1,0 +1,144 @@
+es:
+  navigation:
+    home: "Inicio"
+    news: "Noticias"
+    videos: "Videos"
+    profile: "Mi perfil"
+    admin: "Administración"
+    admin_news: "Noticias (admin)"
+    admin_videos: "Videos (admin)"
+    admin_tags: "Etiquetas (admin)"
+    admin_comments: "Comentarios (admin)"
+    admin_users: "Usuarios (admin)"
+    logout: "Salir"
+    login: "Ingresar"
+    signup: "Crear cuenta"
+  flash:
+    must_login: "Inicia sesión para continuar."
+    admin_only: "No tienes permiso para acceder a esta área."
+    banned: "Tu cuenta está bloqueada. Contacta a un administrador."
+    news_created: "Noticia creada con éxito."
+    news_updated: "Noticia actualizada con éxito."
+    news_deleted: "Noticia eliminada."
+    video_created: "Video creado con éxito."
+    video_updated: "Video actualizado con éxito."
+    video_deleted: "Video eliminado."
+    tag_created: "Etiqueta creada con éxito."
+    tag_updated: "Etiqueta actualizada con éxito."
+    tag_deleted: "Etiqueta eliminada."
+    comment_approved: "Comentario aprobado."
+    comment_rejected: "Comentario rechazado."
+    comment_not_changed: "Comentario no modificado."
+    user_banned: "Usuario bloqueado."
+    user_unbanned: "Usuario desbloqueado."
+    account_created: "Cuenta creada con éxito."
+    signed_in: "Sesión iniciada."
+    invalid_credentials: "Correo o contraseña inválidos."
+    signed_out: "Sesión finalizada."
+    comment_submitted: "Comentario enviado para moderación."
+    rating_saved: "Calificación guardada."
+    friend_added: "Amigo agregado."
+    friend_removed: "Amigo eliminado."
+    friend_not_found: "No se encontró la amistad."
+  actions:
+    search: "Buscar"
+    save: "Guardar"
+    send: "Enviar"
+    login: "Ingresar"
+    new_news: "Nueva noticia"
+    edit_news: "Editar noticia"
+    new_video: "Nuevo video"
+    edit_video: "Editar video"
+    new_tag: "Nueva etiqueta"
+    edit_tag: "Editar etiqueta"
+    show: "Ver"
+    edit: "Editar"
+    delete: "Eliminar"
+    are_you_sure: "¿Estás seguro?"
+    back: "Volver"
+    approve: "Aprobar"
+    reject: "Rechazar"
+    ban: "Bloquear"
+    unban: "Desbloquear"
+  labels:
+    published_at: "Publicada el %{date}"
+    tags: "Etiquetas"
+    no_tags: "Sin etiquetas"
+    average_rating: "Calificación promedio"
+    rate_this: "Califica este contenido"
+    your_rating: "Tu calificación (1 a 5)"
+    login_to_rate: "Inicia sesión para calificar."
+    comments: "Comentarios"
+    no_comments: "No hay comentarios aprobados aún."
+    new_comment: "Nuevo comentario"
+    comment_body: "Mensaje"
+    login_to_comment: "Inicia sesión para comentar."
+    video_url: "Enlace del video"
+    created_at: "Creado en"
+    user: "Usuario"
+    content: "Contenido"
+    locale: "Idioma"
+    source: "Origen"
+    news: "Noticia"
+    video: "Video"
+    name: "Nombre"
+    status: "Estado"
+  news:
+    index:
+      title: "Últimas noticias"
+      search: "Buscar por título o texto"
+      empty: "No hay noticias registradas."
+  videos:
+    index:
+      title: "Videos recientes"
+      empty: "No hay videos registrados."
+  users:
+    new:
+      title: "Crear cuenta"
+    fields:
+      name: "Nombre"
+      email: "Correo"
+      password: "Contraseña"
+      password_confirmation: "Confirmar contraseña"
+      locale: "Idioma preferido"
+    show:
+      add_friend: "Agregar como amigo"
+      remove_friend: "Eliminar amigo"
+      friends: "Amigos"
+      no_friends: "Aún no hay amigos."
+  sessions:
+    new:
+      title: "Ingresar"
+  admin:
+    news:
+      index:
+        title: "Administrar noticias"
+        headline: "Título"
+      fields:
+        title_pt: "Título en portugués"
+        title_es: "Título en español"
+        body_pt: "Texto en portugués"
+        body_es: "Texto en español"
+    videos:
+      index:
+        title: "Administrar videos"
+        headline: "Título"
+      fields:
+        title_pt: "Título en portugués"
+        title_es: "Título en español"
+        description_pt: "Descripción en portugués"
+        description_es: "Descripción en español"
+        url: "URL del video"
+    tags:
+      index:
+        title: "Administrar etiquetas"
+        new_tag: "Registrar nueva etiqueta"
+    comments:
+      index:
+        title: "Moderar comentarios"
+        empty: "No hay comentarios pendientes."
+    users:
+      index:
+        title: "Administrar usuarios"
+        banned: "Bloqueado"
+        active: "Activo"
