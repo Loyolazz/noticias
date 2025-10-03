@@ -1,0 +1,26 @@
+<h1><%= t('admin.videos.index.title') %></h1>
+
+<%= link_to t('actions.new_video'), new_admin_video_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('admin.videos.index.headline') %></th>
+      <th><%= t('labels.created_at') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.title(I18n.locale) %></td>
+        <td><%= l(video.created_at, format: :short) %></td>
+        <td>
+          <%= link_to t('actions.show'), admin_video_path(video) %> |
+          <%= link_to t('actions.edit'), edit_admin_video_path(video) %> |
+          <%= button_to t('actions.delete'), admin_video_path(video), method: :delete, data: { confirm: t('actions.are_you_sure') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

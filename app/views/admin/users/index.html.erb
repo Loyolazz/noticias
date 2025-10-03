@@ -1,0 +1,30 @@
+<h1><%= t('admin.users.index.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('labels.name') %></th>
+      <th><%= t('users.fields.email') %></th>
+      <th><%= t('labels.status') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.banned? ? t('admin.users.index.banned') : t('admin.users.index.active') %></td>
+        <td>
+          <% unless user == current_user %>
+            <% if user.banned? %>
+              <%= button_to t('actions.unban'), unban_admin_user_path(user), method: :patch %>
+            <% else %>
+              <%= button_to t('actions.ban'), ban_admin_user_path(user), method: :patch, data: { confirm: t('actions.are_you_sure') } %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

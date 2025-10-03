@@ -1,0 +1,9 @@
+<h1><%= @video.title(I18n.locale) %></h1>
+<p><%= simple_format(@video.description(I18n.locale)) %></p>
+<p><strong><%= t('labels.video_url') %>:</strong> <%= link_to @video.url, @video.url, target: '_blank', rel: 'noopener' %></p>
+<p><strong><%= t('labels.tags') %>:</strong> <%= @video.tag_list(I18n.locale).presence || t('labels.no_tags') %></p>
+
+<p>
+  <%= link_to t('actions.edit'), edit_admin_video_path(@video) %> |
+  <%= link_to t('actions.back'), admin_videos_path %>
+</p>

@@ -1,0 +1,46 @@
+<h1><%= @news.title(I18n.locale) %></h1>
+<p><%= simple_format(@news.body(I18n.locale)) %></p>
+<p><strong><%= t('labels.tags') %>:</strong> <%= @news.tag_list(I18n.locale).presence || t('labels.no_tags') %></p>
+<p><strong><%= t('labels.average_rating') %>:</strong> <%= number_with_precision(@news.average_rating, precision: 1) %></p>
+
+<section>
+  <h2><%= t('labels.rate_this') %></h2>
+  <% if logged_in? %>
+    <%= form_with model: [@news, @rating], local: true do |form| %>
+      <%= form.label :value, t('labels.your_rating') %>
+      <%= form.number_field :value, in: 1..5 %>
+      <%= form.submit t('actions.save') %>
+    <% end %>
+  <% else %>
+    <p><%= t('labels.login_to_rate') %></p>
+  <% end %>
+</section>
+
+<section>
+  <h2><%= t('labels.comments') %></h2>
+  <% approved_comments = @news.comments.approved.where(locale: I18n.locale.to_s).order(created_at: :asc) %>
+  <% if approved_comments.any? %>
+    <ul>
+      <% approved_comments.each do |comment| %>
+        <li>
+          <strong><%= comment.user.name %></strong>
+          <small><%= l(comment.created_at, format: :short) %></small>
+          <p><%= simple_format(comment.body) %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= t('labels.no_comments') %></p>
+  <% end %>
+
+  <% if logged_in? %>
+    <h3><%= t('labels.new_comment') %></h3>
+    <%= form_with model: [@news, @comment], local: true do |form| %>
+      <%= form.label :body, t('labels.comment_body') %>
+      <%= form.text_area :body %>
+      <%= form.submit t('actions.send') %>
+    <% end %>
+  <% else %>
+    <p><%= t('labels.login_to_comment') %></p>
+  <% end %>
+</section>

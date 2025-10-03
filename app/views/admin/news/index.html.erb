@@ -1,0 +1,26 @@
+<h1><%= t('admin.news.index.title') %></h1>
+
+<%= link_to t('actions.new_news'), new_admin_news_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('admin.news.index.headline') %></th>
+      <th><%= t('labels.created_at') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @news.each do |item| %>
+      <tr>
+        <td><%= item.title(I18n.locale) %></td>
+        <td><%= l(item.created_at, format: :short) %></td>
+        <td>
+          <%= link_to t('actions.show'), admin_news_path(item) %> |
+          <%= link_to t('actions.edit'), edit_admin_news_path(item) %> |
+          <%= button_to t('actions.delete'), admin_news_path(item), method: :delete, data: { confirm: t('actions.are_you_sure') } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

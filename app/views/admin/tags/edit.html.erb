@@ -1,0 +1,13 @@
+<h1><%= t('actions.edit_tag') %></h1>
+
+<%= form_with model: [:admin, @tag], local: true do |form| %>
+  <%= form.label :name, t('labels.name') %>
+  <%= form.text_field :name %>
+
+  <%= form.label :locale, t('users.fields.locale') %>
+  <%= form.select :locale, options_for_select(I18n.available_locales.map { |locale| [locale.upcase, locale] }, @tag.locale) %>
+
+  <%= form.submit t('actions.save') %>
+<% end %>
+
+<%= link_to t('actions.back'), admin_tags_path %>

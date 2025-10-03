@@ -1,0 +1,21 @@
+<%= form_with model: [:admin, @video], local: true do |form| %>
+  <%= form.label :title_pt, t('admin.videos.fields.title_pt') %>
+  <%= form.text_field :title_pt %>
+
+  <%= form.label :title_es, t('admin.videos.fields.title_es') %>
+  <%= form.text_field :title_es %>
+
+  <%= form.label :description_pt, t('admin.videos.fields.description_pt') %>
+  <%= form.text_area :description_pt %>
+
+  <%= form.label :description_es, t('admin.videos.fields.description_es') %>
+  <%= form.text_area :description_es %>
+
+  <%= form.label :url, t('admin.videos.fields.url') %>
+  <%= form.text_field :url %>
+
+  <%= form.label :tag_ids, t('labels.tags') %>
+  <%= form.select :tag_ids, options_for_select(@tags.map { |tag| ["#{tag.name} (#{tag.locale.upcase})", tag.id] }, @video.tag_ids), {}, multiple: true %>
+
+  <%= form.submit t('actions.save') %>
+<% end %>

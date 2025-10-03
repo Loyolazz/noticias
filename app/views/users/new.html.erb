@@ -1,0 +1,28 @@
+<h1><%= t('users.new.title') %></h1>
+
+<%= form_with model: @user, local: true do |form| %>
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.label :name, t('users.fields.name') %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email, t('users.fields.email') %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password, t('users.fields.password') %>
+  <%= form.password_field :password %>
+
+  <%= form.label :password_confirmation, t('users.fields.password_confirmation') %>
+  <%= form.password_field :password_confirmation %>
+
+  <%= form.label :locale, t('users.fields.locale') %>
+  <%= form.select :locale, options_for_select(I18n.available_locales.map { |l| [l.upcase, l] }, @user.locale || I18n.locale) %>
+
+  <%= form.submit t('actions.save') %>
+<% end %>

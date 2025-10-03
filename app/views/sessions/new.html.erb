@@ -1,0 +1,11 @@
+<h1><%= t('sessions.new.title') %></h1>
+
+<%= form_with model: @user, url: session_path, local: true do |form| %>
+  <%= form.label :email, t('users.fields.email') %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password, t('users.fields.password') %>
+  <%= form.password_field :password %>
+
+  <%= form.submit t('actions.login') %>
+<% end %>
